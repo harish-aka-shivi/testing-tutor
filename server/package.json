@@ -7,7 +7,11 @@
     "start:prod": "yarn build && nodemon dist/index.js",
     "start:dev": "NODE_ENV=development nodemon --exec babel-node ./lib/index.js",
     "build": "babel lib -d dist",
-    "serve": "node dist/index.js"
+    "serve": "node dist/index.js",
+    "test": "jest"
+  },
+  "jest": {
+    "testEnvironment": "node"
   },
   "author": "",
   "eslintIgnore": [
@@ -24,6 +28,8 @@
     "@babel/core": "^7.8.7",
     "@babel/node": "^7.8.7",
     "@babel/preset-env": "^7.8.7",
-    "nodemon": "^2.0.2"
+    "jest": "^25.1.0",
+    "nodemon": "^2.0.2",
+    "supertest": "^4.0.2"
   }
 }

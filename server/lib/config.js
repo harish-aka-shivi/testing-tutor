@@ -9,13 +9,13 @@ if (process.env.NODE_ENV === 'development') {
 
 const {
   DATABASE_URL,
-  DEV_NODE_SERVER_PORT,
+  PORT,
   NODE_ENV,
 } = process.env;
 
 
 export {
   DATABASE_URL,
-  DEV_NODE_SERVER_PORT,
+  PORT,
   NODE_ENV,
 };

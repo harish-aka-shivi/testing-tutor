@@ -1,3 +1,13 @@
 {
-  "presets": ["@babel/preset-env"]
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "node": "10.15",
+          "browsers": "last 2 Chrome versions"
+        }
+      }
+    ]
+  ]
 }
