@@ -3,6 +3,9 @@ node_js:
 - 12.13.0
 script:
 - yarn test
+cache:
+  npm: false
+cache: yarn
 deploy:
   app: testing-guru
   provider: heroku
