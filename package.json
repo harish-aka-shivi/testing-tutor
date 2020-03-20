@@ -12,7 +12,8 @@
   "scripts": {
     "start": "cd server && yarn start:prod",
     "start:dev": "cd server && yarn start:dev",
-    "test": "cd server && yarn test"
+    "test": "cd server && yarn test",
+    "build:client": "cd client && yarn build"
   },
   "devDependencies": {
     "eslint": "^6.8.0",
