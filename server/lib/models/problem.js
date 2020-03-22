@@ -1,6 +1,7 @@
 import mongoose from 'mongoose';
 
 const problemSchema = new mongoose.Schema({
+  title: String,
   description: String,
   expects: [{
     statement: String,
