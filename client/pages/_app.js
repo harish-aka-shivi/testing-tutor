@@ -7,12 +7,12 @@ const theme = {
   light: {
     colors: {
       primary: '#0070f3',
-      borderColor: '#FAFAFA',
+      borderColor: '#EEEEEE',
     },
   },
 };
 
-export default class MyApp extends App {
+export default class TestingTutor extends App {
   render() {
     const { Component, pageProps } = this.props;
     return (
