@@ -1,7 +1,7 @@
 /* eslint-disable no-underscore-dangle */
 import React from 'react';
 import { useRouter } from 'next/router';
-import ProblemDetail from '../../containers/problemDetail';
+import ProblemDetail from '../../containers/ProblemDetail';
 import useGetRawProblem from '../../hooks/useGetRawProblem';
 
 const Problem = () => {
