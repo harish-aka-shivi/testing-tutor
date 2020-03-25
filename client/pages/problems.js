@@ -1,13 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import fetch from 'node-fetch';
-import ProblemsContainer from '../containers/problems';
+import ProblemsContainer from '../containers/Problems';
+import useSaveRawProblems from '../hooks/useSaveRawProblems';
 
-const Problems = ({ problems }) => (
-  <main>
-    <ProblemsContainer problems={problems} />
-  </main>
-);
+const Problems = ({ problems }) => {
+  useSaveRawProblems(problems);
+
+  return (
+    <main>
+      <ProblemsContainer problems={problems} />
+    </main>
+  );
+};
 
 Problems.propTypes = {
   problems: PropTypes.arrayOf(PropTypes.object).isRequired,

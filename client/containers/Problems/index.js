@@ -4,7 +4,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Link from 'next/link';
-import withResponsiveness from '../../components/withResponsiveness';
+import withResponsiveness from '../../components/WithResponsiveness';
 
 const ListItemUi = styled.li`
   padding-top: 1.5em;

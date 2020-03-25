@@ -1,15 +1,20 @@
+/* eslint-disable no-underscore-dangle */
 import React from 'react';
 import { useRouter } from 'next/router';
+import ProblemDetail from '../../containers/ProblemDetail';
+import useGetRawProblem from '../../hooks/useGetRawProblem';
 
 const Problem = () => {
   const router = useRouter();
+  const { id } = router.query;
+  const problem = useGetRawProblem(id);
+  if (!problem) {
+    return (<p> Error loading data </p>);
+  }
   return (
-    <>
-      Next Js Problem Page
-      {' '}
-      {router.query.id}
-    </>
+    <ProblemDetail problem={problem} />
   );
 };
+
 
 export default Problem;
