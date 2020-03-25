@@ -1,0 +1,36 @@
+{   "version": 1,
+    "problems": [
+        {
+            "_id": "1",
+            "title": "Sum of primes",
+            "description": "Sum all the prime numbers up to and including the provided number.A prime number is defined as a number greater than one and having only two divisors, one and itself. For example, 2 is a prime number because it's only divisible by one and two.The provided number may not be a prime.",
+            "expects": [
+                {
+                    "_id": "2",
+                    "statement": "Test that the returned value is a number. Take function name as: sumPrimes and argument 10",
+                    "solution": "expect(typeof sumPrimes(10)).toEqual('number')",
+                    "solutionDescription": "To equate the number types typeOf operator can be used."
+                }
+            ]
+        },
+        {
+            "_id": "3",
+            "title": "Is Even",
+            "description": "Write tests for a function which takes argument and return true if number is even. Function name is : \"isEven\"",
+            "expects": [
+                {
+                    "_id": "4",
+                    "statement": "Pass 2 as argument and write test if that number is even",
+                    "solution": "expect(isEven(2)).toBe(true);",
+                    "solutionDescription": "toBe is used to check primitive values and referential equalities."
+                },
+                {
+                    "_id": "5",
+                    "statement": "Pass 3 as argument and write test is odd",
+                    "solution": "expect(isEven(3)).toBe(false);",
+                    "solutionDescription": "toBe is used to check primitive values and referential equalities."
+                }
+            ]
+        }
+    ]
+}
