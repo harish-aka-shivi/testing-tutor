@@ -49,7 +49,6 @@ const ExpectEvaluator = ({
   const onDoneClick = event => {
     event.preventDefault();
     const isRight = checkSolution(inputValue, solution);
-    console.log(isRight, inputValue, solution);
     if (isRight) {
       markExpectDone(_id);
     }

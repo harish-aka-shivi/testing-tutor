@@ -24,7 +24,6 @@ const useGetTrackedProblem = key => {
   }
 
   const saveProblem = question => {
-    console.log(trackedFile);
     trackedFile[key] = question;
     setTrackedFile(trackedFile);
   };

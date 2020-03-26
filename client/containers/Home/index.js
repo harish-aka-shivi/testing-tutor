@@ -109,7 +109,7 @@ const GoToProblemsButton = styled.a`
   padding-left: 6%;
   padding-right: 6%;
   color: ${props => props.theme.colors.accent};
-  font-size: 2rem;
+  font-size: 1.5rem;
   border-radius: 1em;
   cursor: pointer;
 `;
