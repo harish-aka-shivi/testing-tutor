@@ -1,9 +1,10 @@
 import React from 'react';
+import Home from '../containers/Home';
 
 const Index = () => (
-  <>
-    <p>Hello Next.js</p>
-  </>
+  <main>
+    <Home />
+  </main>
 );
 
 export default Index;
