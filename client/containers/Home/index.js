@@ -22,7 +22,6 @@ const TiltedColoredComponent = styled.div`
   background-color: black;
 
   @media (max-width: 720px) {
-   /* display: none; */
   }
 `;
 
@@ -32,7 +31,6 @@ const PaneContainer = styled.div`
   position: absolute;
   flex-wrap: wrap;
   width: 100%;
-  /* height: 50vh; */
   max-width: 100%;
   top: 0px;
   padding-top: 3%;
@@ -68,17 +66,10 @@ const RightPaneContainer = styled.div`
   align-items: center;
 `;
 
-// const Icon = styled.div`
-//   height: 30px;
-//   width: 30px;
-// `;
-
 const RightPane = () => (
   <Pane>
     <RightPaneContainer>
-      {/* <Icon> */}
       <TestingIcon style={{ width: '90%', height: '40vh' }} />
-      {/* </Icon> */}
     </RightPaneContainer>
   </Pane>
 );
