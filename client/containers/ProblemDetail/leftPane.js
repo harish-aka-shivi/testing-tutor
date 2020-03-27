@@ -20,6 +20,8 @@ const LeftPainUI = styled.div`
   border-bottom-style: none;
   border-color: ${props => props.theme.colors.borderColor};
   border-width: 0.2px;
+  padding: 2em;
+
 `;
 
 const LeftPane = ({ description, title }) => (

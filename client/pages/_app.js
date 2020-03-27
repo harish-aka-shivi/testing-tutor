@@ -9,6 +9,7 @@ const theme = {
       primary: '#0070f3',
       borderColor: '#EEEEEE',
       accent: '#E8FF63',
+      backgroundColorDetail: 'F5F5F5',
     },
   },
 };
@@ -16,6 +17,9 @@ const theme = {
 const GlobalStyles = createGlobalStyle`
   body {
     font-family: 'Notable', sans-serif;
+    margin: 0;
+    line-height: 1.4rem;
+    letter-spacing: 0.05rem;
   }
 `;
 

@@ -8,7 +8,6 @@ const TopComponentRoot = styled.article`
   width: 100vw;
   position: relative;
   height: 65vh;
-  margin: -8px;
   overflow-x: hidden;
 `;
 
@@ -112,6 +111,9 @@ const GoToProblemsButton = styled.a`
   font-size: 1.5rem;
   border-radius: 1em;
   cursor: pointer;
+  :hover {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2)
+  }
 `;
 
 const GoToProblems = () => (

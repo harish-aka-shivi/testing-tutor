@@ -15,7 +15,7 @@ const PaneContainer = styled.div`
   width:100%;
   max-width: 100%;
   min-height: 100vh;
-
+  background-color: ${props => props.theme.colors.backgroundColorDetail};
   @media (max-width: 720px) {
     flex-direction: column;
   }
