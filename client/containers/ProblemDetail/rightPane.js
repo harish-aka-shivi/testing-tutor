@@ -5,9 +5,17 @@ import PropTypes from 'prop-types';
 import Pane from '../../components/Pane';
 import ExpectEvaluator from './expectEvaluator';
 
-const RightPaneUI = styled.div`
+const RightPaneUI = styled.ul`
   flex-grow: 1;
   display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 2em;
+  > * + * {
+    border-top: solid;
+    border-color: ${props => props.theme.colors.borderColor};
+    border-width: 1px;
+  }
 `;
 
 const RightPane = ({ expects, savedState }) => (
