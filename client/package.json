@@ -17,6 +17,7 @@
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-markdown": "^4.3.1",
     "styled-components": "^5.0.1",
     "svg-url-loader": "^5.0.0",
     "swr": "^0.1.18"

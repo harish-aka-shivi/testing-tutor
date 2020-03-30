@@ -1,18 +1,18 @@
 /* eslint-disable no-underscore-dangle */
 import React from 'react';
 import { useRouter } from 'next/router';
-import ProblemDetail from '../../containers/ProblemDetail';
-import useGetRawProblem from '../../hooks/useGetRawProblem';
+import dynamic from 'next/dynamic';
+
+const DynamicProblemDetail = dynamic(
+  () => import('../../containers/ProblemDetail'),
+  { ssr: false }
+)
 
 const Problem = () => {
   const router = useRouter();
   const { id } = router.query;
-  const problem = useGetRawProblem(id);
-  if (!problem) {
-    return (<p> Error loading data </p>);
-  }
   return (
-    <ProblemDetail problem={problem} />
+    <DynamicProblemDetail id={id} />
   );
 };
 

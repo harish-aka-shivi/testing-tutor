@@ -20,7 +20,10 @@ const Pane = ({ children, style }) => (
 );
 
 Pane.propTypes = {
-  children: PropTypes.arrayOf(PropTypes.shape({})),
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+  ]),
   style: PropTypes.shape({}),
 };
 

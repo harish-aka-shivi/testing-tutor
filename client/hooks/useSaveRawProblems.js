@@ -7,7 +7,8 @@ const useSaveRawProblems = problemsFetched => {
     try {
       const serializedProblems = window.localStorage.getItem(RAW_PROBLEM_KEY);
       const problemsJson = serializedProblems ? JSON.parse(serializedProblems) : [];
-      if (problemsJson.length !== problemsFetched.length && problemsFetched.length > 0) {
+      const savedVersion = problemsJson.version ? problemsJson.version : 0;
+      if (parseInt(savedVersion, 10) < parseInt(problemsFetched.version, 10)) {
         window.localStorage.setItem(RAW_PROBLEM_KEY, JSON.stringify(problemsFetched));
       }
     } catch (error) {

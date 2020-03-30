@@ -70,6 +70,14 @@ const SolutionStatusLabel = styled.p`
   color: ${props => (props.status === 'RIGHT' ? 'green' : 'red')}
 `;
 
+const ButtonsContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  > * + * {
+    margin-left: 1em;
+  }`;
+
 const ExpectEvaluator = ({
   statement, _id, solution, solutionDescription, done,
 }) => {
@@ -110,14 +118,6 @@ const ExpectEvaluator = ({
     resetState(_id);
   };
 
-  const ButtonsContainer = styled.div`
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    > * + * {
-      margin-left: 1em;
-    }
-  `;
 
   return (
     <li>
@@ -144,12 +144,16 @@ const ExpectEvaluator = ({
   );
 };
 
+ExpectEvaluator.defaultProps = {
+  done: false,
+};
+
 ExpectEvaluator.propTypes = {
   statement: PropTypes.string.isRequired,
   _id: PropTypes.string.isRequired,
   solution: PropTypes.string.isRequired,
   solutionDescription: PropTypes.string.isRequired,
-  done: PropTypes.bool.isRequired,
+  done: PropTypes.bool,
 };
 
 export default ExpectEvaluator;

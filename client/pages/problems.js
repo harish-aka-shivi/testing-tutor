@@ -6,16 +6,18 @@ import useSaveRawProblems from '../hooks/useSaveRawProblems';
 
 const Problems = ({ problems }) => {
   useSaveRawProblems(problems);
-
   return (
     <main>
-      <ProblemsContainer problems={problems} />
+      <ProblemsContainer problems={problems.problems} />
     </main>
   );
 };
 
 Problems.propTypes = {
-  problems: PropTypes.arrayOf(PropTypes.object).isRequired,
+  problems: PropTypes.shape({
+    problems: PropTypes.array,
+    version: PropTypes.number,
+  }).isRequired,
 };
 
 export async function getStaticProps() {
@@ -23,7 +25,7 @@ export async function getStaticProps() {
   try {
     const res = await fetch('https://testing-guru.herokuapp.com/problems');
     const respJson = await res.json();
-    problems = respJson.problems;
+    problems = respJson;
   } catch (error) {
     console.log(error);
   }

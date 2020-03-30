@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import ReactMarkdown from 'react-markdown';
 import Pane from '../../components/Pane';
 
 const LeftPainUI = styled.div`
@@ -27,8 +28,12 @@ const LeftPainUI = styled.div`
 const LeftPane = ({ description, title }) => (
   <Pane>
     <LeftPainUI>
-      <h1>{title}</h1>
-      <p>{description}</p>
+      <ReactMarkdown
+        source={title}
+      />
+      <ReactMarkdown
+        source={description}
+      />
     </LeftPainUI>
   </Pane>
 );
