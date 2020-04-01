@@ -2,12 +2,13 @@
 import useLocalStorage from './useLocalStorage';
 import useRawProblemsFile from './useRawProblemsFile';
 import { TRACKED_PROBLEMS } from '../util/contants';
-import { localStorage } from '../util/localStorage';
+import { getLocalStorage } from '../util/localStorage';
 
 const useTrackProblemFile = () => {
   const [trackedFile, setTrackedFile] = useLocalStorage(TRACKED_PROBLEMS, {});
   const { getRawProblemById } = useRawProblemsFile();
 
+  const localStorage = getLocalStorage();
   const getTrackedProblemById = id => {
     let originalProblem = getRawProblemById(id);
     let problemToFind;

@@ -1,1 +1,1 @@
-export const { localStorage } = window;
+export const getLocalStorage = () => window.localStorage;

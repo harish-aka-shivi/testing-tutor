@@ -14,4 +14,4 @@ class LocalStorage {
   }
 }
 
-export const localStorage = new LocalStorage();
+export const getLocalStorage = () => new LocalStorage();
