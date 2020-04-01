@@ -3,7 +3,7 @@ import { RAW_PROBLEM_KEY } from '../util/contants';
 import useLocalStorage from './useLocalStorage';
 
 const useRawProblemsFile = () => {
-  const [rawFile] = useLocalStorage(RAW_PROBLEM_KEY, [{ problems: [] }]);
+  const [rawFile] = useLocalStorage(RAW_PROBLEM_KEY, { problems: [] });
 
   const getRawProblemById = id => {
     const { problems } = rawFile;
