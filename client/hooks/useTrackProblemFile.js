@@ -2,6 +2,7 @@
 import useLocalStorage from './useLocalStorage';
 import useRawProblemsFile from './useRawProblemsFile';
 import { TRACKED_PROBLEMS } from '../util/contants';
+import { localStorage } from '../util/localStorage';
 
 const useTrackProblemFile = () => {
   const [trackedFile, setTrackedFile] = useLocalStorage(TRACKED_PROBLEMS, {});
@@ -17,7 +18,7 @@ const useTrackProblemFile = () => {
       });
       problemToFind = originalProblem;
       try {
-        window.localStorage.setItem(TRACKED_PROBLEMS,
+        localStorage.setItem(TRACKED_PROBLEMS,
           JSON.stringify({ ...trackedFile, ...{ [id]: originalProblem } }));
       } catch (error) {
         console.log(error);
@@ -33,7 +34,7 @@ const useTrackProblemFile = () => {
         });
         problemToFind = originalProblem;
         try {
-          window.localStorage.setItem(TRACKED_PROBLEMS,
+          localStorage.setItem(TRACKED_PROBLEMS,
             JSON.stringify({ ...trackedFile, ...{ [id]: originalProblem } }));
         } catch (error) {
           console.log(error);
