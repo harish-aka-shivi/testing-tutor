@@ -2,11 +2,12 @@
 import React, { useReducer } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import useGetTrackedProblem from '../../hooks/useGetTrackedProblem';
 import ReduxContext from './reduxContext';
 import { INIT_STATE, MARK_EXPECT_SOLVED, RESET_EXPECT } from './constants';
 import LeftPane from './leftPane';
 import RightPane from './rightPane';
+import useRawProblemsFile from '../../hooks/useRawProblemsFile';
+import useTrackProblemFile from '../../hooks/useTrackProblemFile';
 
 const PaneContainer = styled.div`
   display: flex;
@@ -21,8 +22,16 @@ const PaneContainer = styled.div`
   }
 `;
 
-const ProblemDetail = ({ problem }) => {
-  const [savedState, setSavedState] = useGetTrackedProblem(problem._id);
+const ProblemDetail = ({ id }) => {
+  const { getRawProblemById } = useRawProblemsFile();
+  const problem = getRawProblemById(id);
+  if (!problem) {
+    return (<p> Error loading data </p>);
+  }
+
+  const [getTrackedProblemById, saveProblemById] = useTrackProblemFile();
+  // const [savedState, setSavedState] = useGetTrackedProblem(problem._id);
+  const savedState = getTrackedProblemById(problem._id);
 
   const reducer = (state = savedState, action) => {
     switch (action.type) {
@@ -34,7 +43,7 @@ const ProblemDetail = ({ problem }) => {
           ...state,
           [action.payload.id]: { ...state[action.payload.id], done: true },
         };
-        setSavedState(toBeSavedQuestion);
+        saveProblemById(problem._id, toBeSavedQuestion);
         return { ...state, ...toBeSavedQuestion };
       }
       case RESET_EXPECT: {
@@ -42,7 +51,7 @@ const ProblemDetail = ({ problem }) => {
           ...state,
           [action.payload.id]: { ...state[action.payload.id], done: false },
         };
-        setSavedState(toBeSavedQuestion);
+        saveProblemById(problem._id, toBeSavedQuestion);
         return { ...state, ...toBeSavedQuestion };
       }
       default:
@@ -63,12 +72,7 @@ const ProblemDetail = ({ problem }) => {
 };
 
 ProblemDetail.propTypes = {
-  problem: PropTypes.shape({
-    description: PropTypes.string,
-    title: PropTypes.string,
-    expects: PropTypes.arrayOf(PropTypes.shape({})),
-    _id: PropTypes.string,
-  }).isRequired,
+  id: PropTypes.string.isRequired,
 };
 
 export default ProblemDetail;

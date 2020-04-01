@@ -8,6 +8,7 @@
   "plugins": [
     "jsx-a11y"
   ],
+  "parser": "babel-eslint",
   "rules": {
     "import/prefer-default-export": 0,
     "no-restricted-syntax": 0,
